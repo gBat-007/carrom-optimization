@@ -94,13 +94,13 @@ def allScores(v_s):
     np.save(filename, scores)
     print(f"Scores saved to {filename}")
 
-    # extent = [-26.5, 26.5, 3.5, 52.5]
-    # plt.imshow(scores, cmap='viridis', interpolation='nearest', origin='lower', extent=extent)
-    # plt.colorbar(label="Score")
-    # plt.xlabel("x_c (cm)")
-    # plt.ylabel("y_c (cm)")
-    # plt.title(f"Carromboard Score Heatmap for v_s = {v_s}")
-    # plt.show()
+    extent = [-26.5, 26.5, 3.5, 52.5]
+    plt.imshow(scores, cmap='viridis', interpolation='nearest', origin='lower', extent=extent)
+    plt.colorbar(label="Score")
+    plt.xlabel("x_c (cm)")
+    plt.ylabel("y_c (cm)")
+    plt.title(f"Carromboard Score Heatmap for v_s = {v_s}")
+    plt.show()
 
     
 if __name__ == "__main__":
