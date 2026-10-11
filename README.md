@@ -1,6 +1,6 @@
 # Carrom Optimization
 
-This project explores how likely a coin is to be potted on a carrom board using a multivariable model based on striker position, coin position, shot velocity, and shot angle. The results are stored as heatmaps in the `data/` folder.
+This project explores how likely a coin is to be potted on a carrom board using two multivariable models, where the first one simply considers the initial striker trajectory and coin placement regardless of velocity and outputs the resulting distance of the coin from the pot, while the refined one uses a binary (potted or not) multivariable model based on striker position, coin position, shot velocity, and shot angle, with consideration of kinematics. For the second model, a Python script (`main.py`) discretely looping throughout the coin placements on the board was used to find the 'pottability' at each point (how many striker placement and angle combinations exist at a given velocity potting it). The research paper outlining the development of these models is located at `Research Paper (Latex)/main.pdf`. These results are stored as heatmaps in the `data/` folder.
 
 ## Viewing the heatmap data
 
@@ -79,8 +79,3 @@ If you want to inspect a different velocity, simply change `velocity` and rerun 
 - `show_data.py` — visualizes saved `.npy` score arrays
 - `data/` — saved heatmap data files such as `scores_vs180.npy`
 - `Research Paper (Latex)/` — LaTeX source for the paper
-
-## Notes
-
-- Make sure you run the script from the repository root so that the path `data/scores_vs{velocity}.npy` resolves correctly.
-- If a file for your chosen velocity is missing, check that the corresponding `.npy` file exists in `data/`.
